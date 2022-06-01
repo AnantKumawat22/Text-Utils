@@ -8,10 +8,10 @@ function App() {
   const [theme, settheme] = useState('light');
 
   const toggletheme = () => {
-    if(theme === 'light'){
+    if (theme === 'light') {
       settheme('dark');
       document.body.style.backgroundColor = "#042743";
-    } 
+    }
     else {
       settheme('light');
       document.body.style.backgroundColor = "white";
@@ -23,6 +23,7 @@ function App() {
   }
   const conuppercase = () => {
     setdata(data.toUpperCase());
+
   }
 
   const conlowercase = () => {
@@ -38,12 +39,13 @@ function App() {
   }
 
   const removespaces = () => {
-    setdata(data.replace(/\s+/g,' ').trim());
+    setdata(data.replace(/\s+/g, ' ').trim());
   }
 
   return (
     <>
-      <Navbar theme={theme} toggletheme={toggletheme}/>
+      <Navbar theme={theme} toggletheme={toggletheme} />
+      {/* <div class="alert alert-success" role="alert"></div> */}
       <div className="container d-flex flex-column justify-content-center">
         <h2 className={`pt-3 text-${theme === 'light' ? 'dark' : 'light'}`}>Enter Some Text Here</h2>
         <textarea value={data} onChange={changedata} className="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
@@ -56,12 +58,12 @@ function App() {
         </div>
         <div className={`d-flex justify-content-start text-${theme === 'light' ? 'dark' : 'light'} flex-column `}>
           <h3 className='mt-4'>Your Test Summary</h3>
-          <p>{data === "" ? 0 : data.endsWith(" ") ? data.split(" ").length - 1: data.split(" ").length} and {data.length} characters.</p>
+          <p>{data === "" ? 0 : data.endsWith(" ") ? data.split(" ").length - 1 : data.split(" ").length} and {data.length} characters.</p>
           <p>{0.008 * data.split(" ").length} minutes it take to read.</p>
           <h3 className='mt-5'>Preview in manner</h3>
           <span>{data.length > 0 ? data : "Enter some text in above box to preview here."}</span>
         </div>
-        
+
       </div>
     </>
   );
