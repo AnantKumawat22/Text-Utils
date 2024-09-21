@@ -72,7 +72,7 @@ function App() {
         </div>
         <div className={`d-flex justify-content-start text-${theme === 'light' ? 'dark' : 'light'} flex-column `}>
           <h3 className='mt-4'>Your Test Summary</h3>
-          <p>{data === "" ? 0 : data.endsWith(" ") ? data.split(" ").length - 1 : data.split(" ").length} and {data.length} characters.</p>
+          <p>{data === "" ? 0 : data.endsWith(" ") ? data.split(" ").length - 1 : data.split(" ").length} words and {data.length} characters.</p>
           <p>{0.008 * data.split(" ").length} minutes it take to read.</p>
           <h3 className='mt-5'>Preview in manner</h3>
           <span>{data.length > 0 ? data : "Enter some text in above box to preview here."}</span>
